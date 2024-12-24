@@ -1,7 +1,8 @@
 import React from "react";
 import { Editor } from "./editor";
 import ToolBar from "./toolbar";
-import Navbar from "./navbar";
+import { Navbar } from "./navbar";
+import { Room } from "./room";
 
 const DocumentID = async ({
   params,
@@ -16,7 +17,9 @@ const DocumentID = async ({
         <ToolBar />
       </div>
       <div className="pt-[114px] print:pt-0">
-        <Editor />
+        <Room>
+          <Editor />
+        </Room>
       </div>
     </div>
   );

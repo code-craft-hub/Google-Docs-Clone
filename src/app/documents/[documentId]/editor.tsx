@@ -21,7 +21,9 @@ import TextStyle from "@tiptap/extension-text-style";
 import { FontSizeExtension } from "@/extensions/font-size";
 import { LineHeightExtension } from "@/extensions/line-height";
 import Ruler from "./ruler";
+import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
 export const Editor = () => {
+  const liveblocks = useLiveblocksExtension();
   const { setEditor } = useEditorStore();
   const editor = useEditor({
     immediatelyRender: false,
@@ -57,13 +59,10 @@ export const Editor = () => {
       },
     },
     extensions: [
+      liveblocks,
       FontSizeExtension,
       StarterKit,
       LineHeightExtension,
-      // .configure({
-      //   types: ["heading","paragraph"],
-      //   defaultLineHeight: "normal"
-      // })
       TextStyle,
       Link.configure({
         openOnClick: false,

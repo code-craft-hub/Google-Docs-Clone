@@ -1,1 +1,1 @@
-    "next-themes": "^0.4.4",
+"next-themes": "^0.4.4",
